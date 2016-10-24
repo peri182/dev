@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>CRUD</h1>
+
+  <h2> Citações no Banco de Dados </h2>
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+      <span><%= quotes[i].name %></span>
+      <span><%= quotes[i].quote %></span>
+    </li>
+  <% } %>
+  </ul>
+  <h3>Adicionar Nome/Citação</h3>
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="Nome" name="name">
+    <input type="text" placeholder="Citação" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+
+<div>
+  <h3>Atualizar Citação</h3>
+  <input type="text" placeholder="Atualizar" update="update">
+  <button id="update"> Atualizar </button>
+</div>
+
+<div>
+  <h3>Remover Citação</h3>
+  <input type="text" placeholder="Deletar" delete="delete">
+  <button id="delete"> Deletar </button>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
